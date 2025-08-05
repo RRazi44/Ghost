@@ -69,6 +69,8 @@ Feel free to use, modify, and distribute it, as long as you include the original
 
 ## 📌 Notes
 
+
 - This mod is intended for **educational and personal use**.  
-- It does not include any cheating or malicious features.  
+- Some mods can be considered as a cheat, so **check the server rules before using this mod in multiplayer**.  
+- It does not include any malicious features.  
 - The architecture is designed for adding clean, toggleable modules.
