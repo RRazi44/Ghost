@@ -1,0 +1,47 @@
+# =========================
+# Gradle
+# =========================
+.gradle/
+build/
+run/
+
+# Wrapper logs
+.gradle/**
+!gradle/wrapper/gradle-wrapper.jar
+
+# Gradle caches
+**/.gradletasknamecache
+**/gradle-app.setting
+
+# =========================
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# =========================
+# Eclipse (si jamais ouvert dedans)
+# =========================
+.classpath
+.project
+.settings/
+
+# =========================
+# Logs & OS files
+# =========================
+*.log
+*.tmp
+*.temp
+*.swp
+.DS_Store
+Thumbs.db
+
+# =========================
+# Forge / Minecraft generated
+# =========================
+eclipse/
+out/
+bin/
+mods/

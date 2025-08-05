@@ -1,0 +1,16 @@
+[
+{
+  "modid": "Ghost",
+  "name": "Ghost",
+  "description": "Ghost mod by Razi.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Razi"],
+  "credits": "The Forge and FML guys and a little bit ChatGPT",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

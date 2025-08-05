@@ -1,0 +1,93 @@
+// --------------------------------
+// >> Haut du fichier
+// --------------------------------
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "spongepowered"
+            url = "https://repo.spongepowered.org/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'org.spongepowered.mixin'
+
+// --------------------------------
+// >> Infos mod
+// --------------------------------
+version = "1.0"
+group = "fr.razi.ghostmod"
+archivesBaseName = "Ghost"
+
+minecraft {
+    version = "1.8.9-11.15.1.2318-1.8.9"
+    runDir = "run"
+    mappings = "stable_20"
+}
+
+// --------------------------------
+// >> Dépendances
+// --------------------------------
+repositories {
+    maven { url = "https://repo.spongepowered.org/maven" }
+}
+
+dependencies {
+    implementation 'org.spongepowered:mixin:0.7.11-SNAPSHOT'
+}
+
+// --------------------------------
+// >> Mixin Config
+// --------------------------------
+ext.mixinRefMap = "mixins.ghostmod.refmap.json"
+
+sourceSets {
+    main {
+        output.resourcesDir = output.classesDir
+    }
+}
+
+
+// --------------------------------
+// >> mcmod.info
+// --------------------------------
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+// --------------------------------
+// >> Java version
+// --------------------------------
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
