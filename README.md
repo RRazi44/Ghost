@@ -48,7 +48,7 @@ src/main/java/fr/razi/ghostmod
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Ghost.git
+   git clone https://github.com/RRazi44/Ghost.git
    cd Ghost
    ```
 
